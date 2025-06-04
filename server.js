@@ -8,11 +8,8 @@ const PORT = 3000
 // Middleware para ler dados de formulários
 app.use(express.urlencoded({ extended: true }))
 
-// Servir arquivos CSS da pasta css
-app.use('/css', express.static(path.join(__dirname, 'css')))
-
-// Servir arquivos HTML da pasta templates
-app.use(express.static(path.join(__dirname, 'templates')))
+// Servir arquivos HTML e CSS
+app.use(express.static(path.join(__dirname)))
 
 // Criar/conectar banco SQLite
 const db = new sqlite3.Database('./usuarios.db');
