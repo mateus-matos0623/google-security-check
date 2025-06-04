@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.container {
+  animation: piscar 1s infinite alternate;
+}
+
+.gif {
+  width: 300px;
+  margin-top: 20px;
+}
+
+@keyframes piscar {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+p {
+  font-size: 25px;
+}
